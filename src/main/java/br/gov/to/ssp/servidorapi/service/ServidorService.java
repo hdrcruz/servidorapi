@@ -3,6 +3,7 @@ package br.gov.to.ssp.servidorapi.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.gov.to.ssp.servidorapi.dto.request.ServidorDTO;
 import br.gov.to.ssp.servidorapi.dto.response.MessageResponseDTO;
 import br.gov.to.ssp.servidorapi.entity.Servidor;
 import br.gov.to.ssp.servidorapi.repository.ServidorRepository;
@@ -17,7 +18,7 @@ public class ServidorService {
         this.servidorRepository = servidorRepository;
     }
 
-    public MessageResponseDTO criarServidor(Servidor servidor){
+    public MessageResponseDTO criarServidor(ServidorDTO servidor){
         Servidor novoServidor = servidorRepository.save(servidor);
         return MessageResponseDTO.builder().message("Servidor criado com ID " + novoServidor.getId()).build();
     }
