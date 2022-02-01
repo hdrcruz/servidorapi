@@ -14,8 +14,4 @@ public enum TipoSetor {
     EXTERNO("Externo");
 
     private final String descricao;
-
-    private TipoSetor(String descricao) {
-        this.descricao = descricao;
-    }
 }
